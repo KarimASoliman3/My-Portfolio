@@ -1,26 +1,52 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import { useRef} from "react";
+import toast from "react-hot-toast";
+import emailjs from '@emailjs/browser';
+
+
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const form = useRef<HTMLFormElement>(null);
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    emailjs
+      .sendForm('service_3765e8u', 'template_9r5g4vf', form.current!, {
+        publicKey: 'W7dPQVIdnQRjPTSCb',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          if (form.current) {
+            toast.success('Message sent successfully!');
+            form.current.reset();
+          }
+        },
+        (error: any) => {
+          toast.error('Failed to send message. Please try again.');
+          console.log('FAILED...', error.text);
+        },
+      );
   };
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted:", formData);
+  // };
+
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
   const contactInfo = [
     {
@@ -105,7 +131,8 @@ const Contact = () => {
 
           <div className="animate-slideInRight">
             <form
-              onSubmit={handleSubmit}
+            ref={form} 
+            onSubmit={sendEmail}
               className="space-y-6 bg-white p-8 rounded-xl shadow-lg"
             >
               <div>
@@ -119,8 +146,6 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none"
                   placeholder="Your name"
                   required
@@ -138,8 +163,6 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none"
                   placeholder="your.email@example.com"
                   required
@@ -156,11 +179,9 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   rows={5}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder="Type your message here..."
                   required
                 ></textarea>
               </div>
