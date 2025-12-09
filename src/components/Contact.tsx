@@ -75,9 +75,9 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Get In{" "}
+            Contact{" "}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Touch
+              US
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
