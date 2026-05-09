@@ -10,6 +10,8 @@ import glassFiltter from "../assets/glass-filtter.png";
 import daniels from "../assets/daniels.png";
 import freshify from "../assets/freshify.png";
 import YumRun from "../assets/yumRun.png";
+import binaryCoffee from "../assets/pinarycaffe.png";
+import sugarPanel from "../assets/sugarpanel-dashboard.png";
 
 import { useTranslation } from "react-i18next";
 
@@ -35,6 +37,25 @@ const Projects = () => {
       demo: "https://social-app-flax-beta.vercel.app/",
     },
     {
+      title: "SugarPanel - Admin Dashboard",
+      description:
+        "A responsive React dashboard application, featuring analytics, product management, user management, interactive charts, and a modern UI experience.",
+      image: sugarPanel,
+      tech: [
+        "React 18",
+        "React Hooks",
+        "React Router v6",
+        "Bootstrap 5",
+        "Recharts",
+        "Docker",
+        "Docker Compose",
+        "Mock API",
+        "JavaScript",
+      ],
+      github: "https://github.com/KarimASoliman3/SugarPanel-Dashboard",
+      demo: "https://sugar-panel-dashboard.vercel.app/",
+    },
+    {
       title: "Skillpath - E-Learning website",
       description:
         "A platform for skill tracking, learning paths or skill development management.",
@@ -51,6 +72,23 @@ const Projects = () => {
       tech: ["React", "JavaScript", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/KarimASoliman3/Food-delivery",
       demo: "https://yumrun-food-delivery.netlify.app/",
+    },
+    {
+      title: "Binary Coffee - Coffee Shop Website",
+      description:
+        "A modern coffee shop website built with React and Vite, featuring responsive design, smooth animations, interactive UI components, and an elegant user experience for showcasing coffee products and services.",
+      image: binaryCoffee,
+      tech: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "JSX",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Icons",
+      ],
+      github: "https://github.com/KarimASoliman3/Binary-Coffe",
+      demo: "https://binary-coffe.netlify.app",
     },
     {
       title: "Weather API App",
