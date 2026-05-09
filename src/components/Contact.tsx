@@ -1,30 +1,30 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { useRef} from "react";
+import { useRef } from "react";
 import toast from "react-hot-toast";
-import emailjs from '@emailjs/browser';
-
-
+import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const form = useRef<HTMLFormElement>(null);
+
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_3765e8u', 'template_9r5g4vf', form.current!, {
-        publicKey: 'W7dPQVIdnQRjPTSCb',
+      .sendForm("service_3765e8u", "template_9r5g4vf", form.current!, {
+        publicKey: "W7dPQVIdnQRjPTSCb",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
           if (form.current) {
-            toast.success('Message sent successfully!');
+            toast.success(t("common.messageSentSuccess"));
             form.current.reset();
           }
         },
-        (error: any) => {
-          toast.error('Failed to send message. Please try again.');
-          console.log('FAILED...', error.text);
+        (error: unknown) => {
+          toast.error(t("common.messageSendFailed"));
+          console.log("FAILED...", (error as { text?: string })?.text);
         },
       );
   };
@@ -51,20 +51,20 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      titleKey: "contact.labels.email" as const,
       value: "karimsolimanfcb10@gmail.com",
       link: "mailto:karimsolimanfcb10@gmail.com",
     },
     {
       icon: Phone,
-      title: "Phone",
+      titleKey: "contact.labels.phone" as const,
       value: "+201010731125",
       link: "tel:+201010731125",
     },
 
     {
       icon: MapPin,
-      title: "Location",
+      titleKey: "contact.labels.location" as const,
       value: "Cairo EG",
       link: "#",
     },
@@ -74,15 +74,11 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Contact{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              US
-            </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            {t("contact.heading")}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Have a project in mind? Let's work together to create something
-            amazing
+          <p className="text-lg text-slate-600 dark:text-slate-300  max-w-2xl mx-auto">
+            {t("contact.description")}
           </p>
         </div>
 
@@ -90,12 +86,12 @@ const Contact = () => {
           <div className="space-y-8 animate-slideInLeft">
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                Contact Information
+                {t("contact.infoHeading")}
               </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <a
-                    key={info.title}
+                    key={info.titleKey}
                     href={info.link}
                     className="flex items-start gap-4 p-4 bg-white rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group animate-fadeInUp"
                     style={{ animationDelay: `${index * 100}ms` }}
@@ -105,7 +101,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900 mb-1">
-                        {info.title}
+                        {t(info.titleKey)}
                       </h4>
                       <p className="text-slate-600">{info.value}</p>
                     </div>
@@ -131,8 +127,8 @@ const Contact = () => {
 
           <div className="animate-slideInRight">
             <form
-            ref={form} 
-            onSubmit={sendEmail}
+              ref={form}
+              onSubmit={sendEmail}
               className="space-y-6 bg-white p-8 rounded-xl shadow-lg"
             >
               <div>
@@ -140,14 +136,14 @@ const Contact = () => {
                   htmlFor="name"
                   className="block text-slate-700 font-medium mb-2"
                 >
-                  Name
+                  {t("contact.fields.name")}
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none"
-                  placeholder="Your name"
+                  placeholder={t("contact.placeholders.name")}
                   required
                 />
               </div>
@@ -157,14 +153,14 @@ const Contact = () => {
                   htmlFor="email"
                   className="block text-slate-700 font-medium mb-2"
                 >
-                  Email
+                  {t("contact.fields.email")}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none"
-                  placeholder="your.email@example.com"
+                  placeholder={t("contact.placeholders.email")}
                   required
                 />
               </div>
@@ -174,14 +170,14 @@ const Contact = () => {
                   htmlFor="message"
                   className="block text-slate-700 font-medium mb-2"
                 >
-                  Message
+                  {t("contact.fields.message")}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none resize-none"
-                  placeholder="Type your message here..."
+                  placeholder={t("contact.placeholders.message")}
                   required
                 ></textarea>
               </div>
@@ -190,7 +186,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                Send Message
+                {t("common.sendMessage")}
                 <Send
                   size={20}
                   className="group-hover:translate-x-1 transition-transform duration-300"

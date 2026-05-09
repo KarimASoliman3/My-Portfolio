@@ -8,10 +8,13 @@ import devfolio from "../assets/devfolio.png";
 import bookmarker from "../assets/bookmarker.png";
 import glassFiltter from "../assets/glass-filtter.png";
 import daniels from "../assets/daniels.png";
-import freshify from "../assets/freshify.png"
-import YumRun from "../assets/yumRun.png"
+import freshify from "../assets/freshify.png";
+import YumRun from "../assets/yumRun.png";
+
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const projects = [
     {
       title: "Freshify - E-commerce app",
@@ -41,13 +44,14 @@ const Projects = () => {
       demo: "https://skillpath-k7w8-5nxaivemp-karimasoliman3s-projects.vercel.app/",
     },
     {
-      title: 'YumRun - FoodDelivery app',
-      description: 'An online food delivery web application where users can browse menus, place orders, and track delivery status.',
-      image:YumRun,
-      tech: ['React', 'JavaScript', 'Node.js', 'Express', 'MongoDB'],
-      github: 'https://github.com/KarimASoliman3/Food-delivery',
-      demo: 'https://yumrun-food-delivery.netlify.app/'
-    },    
+      title: "YumRun - FoodDelivery app",
+      description:
+        "An online food delivery web application where users can browse menus, place orders, and track delivery status.",
+      image: YumRun,
+      tech: ["React", "JavaScript", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/KarimASoliman3/Food-delivery",
+      demo: "https://yumrun-food-delivery.netlify.app/",
+    },
     {
       title: "Weather API App",
       description:
@@ -116,17 +120,17 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section
+      id="projects"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-500"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Projects
-            </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            {t("projects.heading")}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            A selection of my recent work and personal projects
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            {t("projects.description")}
           </p>
         </div>
 
@@ -134,7 +138,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group bg-slate-50 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fadeInUp"
+              className="group bg-slate-50 dark:bg-slate-900/40 border border-transparent rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fadeInUp"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden aspect-video">
@@ -147,14 +151,14 @@ const Projects = () => {
                   <a
                     target="_blank"
                     href={project.github}
-                    className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                    className="p-3 bg-white  rounded-full hover:bg-blue-600 hover:text-white dark:text-blue-600 dark:hover:text-white transition-all duration-300 transform hover:scale-110"
                   >
                     <Github size={20} />
                   </a>
                   <a
                     target="_blank"
                     href={project.demo}
-                    className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                    className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white dark:text-blue-600 dark:hover:text-white transition-all duration-300 transform hover:scale-110"
                   >
                     <ExternalLink size={20} />
                   </a>
@@ -162,10 +166,10 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

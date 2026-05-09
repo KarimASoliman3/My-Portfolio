@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "common": {
+    "portfolio": "Portfolio",
+    "viewWork": "View My Work",
+"contactUs": "Contact US",
+    "downloadCv": "Download CV",
+    "sendMessage": "Send Message",
+    "messageSentSuccess": "Message sent successfully!",
+    "messageSendFailed": "Failed to send message. Please try again.",
+    "whatsappChat": "Chat with us"
+  },
+  "hero": {
+    "titlePrefix": "Hi, I'm Karim",
+    "titleRole": "Frontend Developer",
+    "description": "Crafting beautiful, responsive, and user-friendly web experiences with modern technologies. Passionate about clean code and innovative solutions.",
+    "scrollToAbout": "Scroll to About"
+  },
+  "about": {
+    "heading": "About Me",
+    "paragraph1": "With several years of experience in frontend development, I specialize in creating responsive, accessible, and performant web applications. My expertise lies in React, TypeScript, and modern CSS frameworks, always staying up-to-date with the latest industry trends.",
+    "paragraph2": "I believe in writing clean, maintainable code and creating intuitive user interfaces that provide seamless experiences across all devices. My goal is to transform ideas into reality through elegant code and thoughtful design.",
+    "features": {
+      "cleanCode": "Clean Code",
+      "creativeSolutions": "Creative Solutions",
+      "fastPerformance": "Fast Performance",
+      "teamPlayer": "Team Player",
+      "cleanCodeDesc": "Writing maintainable and scalable code following best practices",
+      "creativeSolutionsDesc": "Innovative approaches to solve complex problems",
+      "fastPerformanceDesc": "Optimized applications for the best user experience",
+      "teamPlayerDesc": "Collaborative mindset with excellent communication skills"
+    }
+  },
+  "skills": {
+    "headingPrefix": "My",
+    "heading": "Skills",
+    "description": "Technologies and tools I work with to bring ideas to life"
+  },
+  "projects": {
+    "heading": "Featured Projects",
+    "description": "A selection of my recent work and personal projects"
+  },
+  "contact": {
+    "heading": "Contact US",
+    "description": "Have a project in mind? Let's work together to create something amazing",
+    "infoHeading": "Contact Information",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your.email@example.com",
+      "message": "Type your message here..."
+    },
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "portfolioName": "Portfolio",
+    "description": "Creating beautiful and functional web experiences with passion and precision.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "All rights reserved."
+  }
+}
+

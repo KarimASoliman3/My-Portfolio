@@ -8,8 +8,18 @@
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased transition-colors duration-500;
   }
+}
+
+/* Smooth theme transitions */
+html,
+body,
+#root,
+* {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @layer utilities {
@@ -66,8 +76,24 @@
     }
   }
 
+  @keyframes whatsAppEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(18px) scale(0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-3px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
     }
     50% {
@@ -102,6 +128,10 @@
 
   .animate-slideInUp {
     animation: slideInUp 0.8s ease-out forwards;
+  }
+
+  .animate-whatsappEnter {
+    animation: whatsAppEnter 0.65s ease-out both;
   }
 
   .animate-float {
