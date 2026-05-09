@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 mb-4 ${
+      className={`fixed top-0  left-0 right-0 z-50 transition-all duration-300 mt-7 md:mt-1 mb-4 ${
         isScrolled
           ? "bg-white/90 dark:bg-slate-950/70 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -58,7 +58,7 @@ const Header = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="flex items-center">
             <ThemeLanguageToggle />
           </div>
 
@@ -72,7 +72,7 @@ const Header = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fadeIn bg-white dark:bg-slate-950 h-[40vh] text-center rounded-b-2xl transition-colors duration-500">
+          <div className="md:hidden py-4 animate-fadeIn bg-white dark:bg-slate-950 h-[50vh] text-center rounded-b-2xl transition-colors duration-500">
             {navItems.map((item) => (
               <a
                 key={item.key}

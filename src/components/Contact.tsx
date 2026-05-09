@@ -176,7 +176,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none resize-none"
+                  className="w-full px-4 py-3 border dark:text-slate-800 dark:font-medium border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 outline-none resize-none"
                   placeholder={t("contact.placeholders.message")}
                   required
                 ></textarea>

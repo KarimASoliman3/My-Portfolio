@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import {  MessageCircleMore } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { useTranslation } from "react-i18next";
@@ -59,7 +59,7 @@ export default function WhatsAppFloatingButton() {
           aria-label={tooltipText}
           className={
             "inline-flex items-center justify-center rounded-full " +
-            "w-12 h-12 sm:w-14 sm:h-14 " +
+            "w-11 h-11 sm:w-14 sm:h-14 " +
             "bg-[#25D366] text-white " +
             "shadow-[0_10px_25px_-10px_rgba(37,211,102,0.55)] " +
             "dark:shadow-[0_10px_25px_-10px_rgba(37,211,102,0.35)] " +
@@ -72,7 +72,7 @@ export default function WhatsAppFloatingButton() {
           }
           title={tooltipText}
         >
-          <MessageCircle size={22} className="drop-shadow-sm" />
+          <MessageCircleMore size={24} className="drop-shadow-sm" />
         </a>
       </div>
     </div>

@@ -51,7 +51,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("common.downloadCv")}
-                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg shadow-blue-600/20 transition-all duration-300 ease-out hover:translate-y-[-1px] hover:shadow-xl hover:shadow-blue-600/35 active:translate-y-[0px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white/60 dark:focus-visible:ring-offset-slate-950/60 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-6 px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 shadow-lg shadow-blue-600/20 transition-all duration-300 ease-out hover:translate-y-[-1px] hover:shadow-xl hover:shadow-blue-600/35 active:translate-y-[0px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white/60 dark:focus-visible:ring-offset-slate-950/60 overflow-hidden"
                   onClick={(e) => {
                     // Robust download: try download via `download` attribute;
                     // fallback opens in a new tab if the browser blocks downloads.
@@ -71,12 +71,12 @@ const Hero = () => {
                   <span className="inline-flex items-center gap-3 rtl:flex-row-reverse">
                     <span
                       aria-hidden="true"
-                      className="relative inline-flex items-center justify-center w-8 h-8 rounded-lg bg-white/15 backdrop-blur border border-white/15"
+                      className="relative inline-flex items-center justify-center w-7 h-7 rounded-lg bg-white/15 backdrop-blur border border-white/15"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="18"
+                        height="18"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
