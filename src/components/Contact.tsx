@@ -96,7 +96,7 @@ const Contact = () => {
                     className="flex items-start gap-4 p-4 bg-white rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group animate-fadeInUp"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                       <info.icon className="text-white" size={24} />
                     </div>
                     <div>

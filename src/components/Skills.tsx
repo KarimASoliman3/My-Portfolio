@@ -59,9 +59,9 @@ const Skills = () => {
                 className="group animate-fadeInUp"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900/40 border border-transparent hover:border-white/10 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-cyan-50 hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300">
+                <div className="flex flex-col items-center p-6 bg-indigo-100 dark:bg-slate-900/40 border border-transparent hover:border-white/10 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-cyan-50 hover:shadow-xl transition-all duration-300 cursor-pointer">
                   <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-125 transition-all duration-300 shadow-lg overflow-hidden">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-all duration-300 shadow-lg overflow-hidden">
                       {IconComponent ? (
                         <IconComponent className="text-white" size={32} />
                       ) : (
