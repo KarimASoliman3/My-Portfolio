@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import img from "../assets/k.jpg";
 
 // Easy to update later
-const CV_PATH = "/assets/cv/Karim-CV.pdf";
+const CV_PATH = "/assets/cv/Karim_CV.pdf";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -47,7 +47,7 @@ const Hero = () => {
                 {/* Download CV (icon + RTL-safe layout) */}
                 <a
                   href={CV_PATH}
-                  download
+                  download="Karim_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t("common.downloadCv")}

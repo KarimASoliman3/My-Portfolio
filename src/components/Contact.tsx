@@ -58,14 +58,14 @@ const Contact = () => {
     {
       icon: Phone,
       titleKey: "contact.labels.phone" as const,
-      value: "+201010731125",
-      link: "tel:+201010731125",
+      value: "+966510430814",
+      link: "tel:+966510430814",
     },
 
     {
       icon: MapPin,
       titleKey: "contact.labels.location" as const,
-      value: "Cairo EG",
+      value: "Jeddah KSA",
       link: "#",
     },
   ];

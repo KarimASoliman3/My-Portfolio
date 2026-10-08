@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../state/AppContext";
 
-const WHATSAPP_NUMBER = "201010731125";
+const WHATSAPP_NUMBER = "966510430814";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function WhatsAppFloatingButton() {
