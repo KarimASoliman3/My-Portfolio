@@ -15,12 +15,6 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-slideInLeft">
-            {/* <div className="inline-block">
-              <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium animate-bounce">
-                Welcome to my portfolio
-              </span>
-            </div> */}
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 dark:text-slate-300 transition-colors leading-tight">
               {t("hero.titlePrefix")}{" "}
               {/* <span className="font-semibold">{"Karim"}</span> */}
